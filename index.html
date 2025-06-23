@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bibek Devkota - Portfolio</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="shortcut icon" type="image/icon" href="/assets/icons/bd.png" />
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+</head>
+
+<body class="scroll-smooth ">
+
+    <header x-data="{ sidebarOpen:false }" class="relative">
+        <!-- desktop navbar -->
+        <nav class="hidden lg:block bg-gray-50 shadow-lg flex justify-between">
+            <div class="  lg:px-5 flex justify-between items-center">
+                <div class="items-center h-full py-5">
+                    <a href="/index.html" class="text-4xl font-bold text-blue-600 text-center ">BD</a>
+                </div>
+                <div class="flex items-center text-xl gap-10 py-5">
+                    <div>
+                        <a href="#about" class="relative group hover:text-blue-600  cursor-pointer">
+                            <span class="relative">
+                                About me
+                            </span> <span
+                                class=" absolute left-0 -bottom-1 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
+                        </a>
+                    </div>
+                    <div>
+                        <a href="#my-skills" class="relative group hover:text-blue-600  cursor-pointer">
+                            <span class="relative">
+                                Skills
+                            </span> <span
+                                class=" absolute left-0 -bottom-1 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
+                        </a>
+                    </div>
+
+                    <div>
+                        <a href="#my-project" class="relative group hover:text-blue-600  cursor-pointer">
+                            <span class="relative">
+                                Project
+                            </span> <span
+                                class=" absolute left-0 -bottom-1 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
+                        </a>
+                    </div>
+                    <button class="bg-blue-600 cursor-pointer hover:bg-blue-700 text-white px-3 py-2 rounded-lg">Contact
+                        me</button>
+                </div>
+
+            </div>
+        </nav>
+        <!-- mobile navbar -->
+        <nav class=" lg:hidden px-5  bg-gray-50 shadow-lg flex items-center justify-between">
+            <div class="items-center h-full py-2">
+                <a href="/index.html" class="text-4xl font-bold text-blue-600 text-center ">BD</a>
+            </div>
+            <div class="w-10 h-10" @click="sidebarOpen =!sidebarOpen">
+                <img src="/assets/icons/hamburger.svg" alt="hamburger" class="object-cover">
+            </div>
+        </nav>
+        <!-- sidebar -->
+        <div class="fixed inset-0 z-40 bg-gray-500/70 " x-show="sidebarOpen" @click="sidebarOpen = false"
+            x-transition.opacity x-cloak>
+        </div>
+        <aside
+            class="fixed top-0 right-0 w-2/3 max-w-xs h-full bg-white shadow-lg z-50 p-6 transition-transform duration-300 transform"
+            :class="sidebarOpen ? 'translate-x-0':'translate-x-full' ">
+            <div class="flex justify-end mb-6">
+                <button @click="sidebarOpen = false" class="cursor-pointer w-5 h-5">
+                    <img src="/assets/icons/close.svg" alt="close" class="object-cover ">
+                </button>
+            </div>
+            <ul class="space-y-4">
+                <li class="text-lg font-medium hover:text-blue-600 cursor-pointer"><a href="#about">About me</a></li>
+                <li class="text-lg font-medium hover:text-blue-600 cursor-pointer"><a href="#my-skills"> Skills</a></li>
+                <li class="text-lg font-medium hover:text-blue-600 cursor-pointer"><a href="#my-project">Project</a>
+                </li>
+
+            </ul>
+        </aside>
+
+
+    </header>
+
+
+
+    <!-- this is body -->
+    <main>
+        <section class="bg-gradient-to-r from-blue-50 to-indigo-50 h-[750px] w-full">
+            <div
+                class="container mx-auto px-4  md:h-full  flex flex-col-reverse  md:flex-row items-center md:justify-between  ">
+                <div class="py-5">
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
+                        Hi, I'm
+
+                        <span class="text-blue-600">
+                            Bibek Devkota
+                        </span>
+                    </h1>
+                    <p class="text-xl md:text-2xl text-slate-600 mb-8">
+                        Frontend Developer</p>
+                    <p class="text-lg text-slate-700 mb-8 max-w-lg">I build web applications with modern technologies.
+                        Let's
+                        work together to bring ideas to life.</p>
+                    <button
+                        class="border border-blue-600 text-blue-600 hover:bg-blue-500 hover:text-white cursor-pointer px-6 py-3 rounded-md font-medium transition-colors duration-300">
+                        Contact me
+                    </button>
+                    <!-- follow me -->
+                    <div class="my-5 mx-2">
+                        <div class="flex space-x-4">
+                            <a href="https://github.com/bibek0121"
+                                class="bg-slate-200 hover:bg-blue-600 hover:text-white p-3 rounded-full transition-colors duration-300">
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                    <path fillRule="evenodd"
+                                        d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+                                        clipRule="evenodd"></path>
+                                </svg>
+                            </a>
+                            <a href="https://www.linkedin.com/in/bibek-devkota-296996281/"
+                                class="bg-slate-200 hover:bg-blue-600 hover:text-white p-3 rounded-full transition-colors duration-300">
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                    <path fillRule="evenodd"
+                                        d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
+                                        clipRule="evenodd"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- divider -->
+                <div class="hidden lg:flex h-full overflow-hidden  gap-1  px-10">
+                    <div class=" h-full w-1 bg-blue-700"></div>
+                    <div class="h-full w-1 bg-blue-700"></div>
+                    <div class="h-full w-1 bg-blue-700"></div>
+                </div>
+                <!-- image -->
+                <div class="md:w-1/2 flex justify-center py-10">
+                    <div class="bg-white p-4 rounded-full shadow-xl">
+                        <div class="w-60 h-60 md:w-72 md:h-72 rounded-full overflow-hidden border-4 border-blue-100">
+                            <img src="/assets/images/profile.jpeg" alt="Bibek Devkota"
+                                class="w-full h-full object-cover" />
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+
+        <!-- about me -->
+        <section id="about" class="py-20 bg-white w-full ">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4">About Me</h2>
+                    <div class="w-20 h-1 bg-blue-600 mx-auto"></div>
+                </div>
+                <div class="flex flex-col lg:flex-row gap-10 lg:items-center">
+                    <div class="lg:w-1/2">
+                        <p class="text-lg text-justify text-slate-700 mb-6">
+                            I'm a passionate developer with expertise in building modern web
+                            applications. With a strong foundation in frontend , I create seamless, user-friendly
+                            experiences
+                            that solve real-world problems.
+                        </p>
+                        <p class="text-lg text-justify text-slate-700 mb-6">
+                            My journey in programming started with HTML, CSS, and JavaScript,
+                            and has evolved to include modern frameworks like React,Nextjs.
+                            I'm also start learning in Python for backend development.
+                        </p>
+                        <p class="text-lg text-justify text-slate-700">
+                            I'm constantly learning new technologies and methodologies to stay
+                            at the forefront of web development. When I'm not coding, you can
+                            find me exploring nature, reading tech blogs.
+                        </p>
+                    </div>
+                    <div class="lg:w-1/2 grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="bg-blue-50 p-6 rounded-lg shadow-sm">
+                            <div
+                                class="bg-blue-100 hover:bg-blue-500 transition-colors duration-300 p-3 rounded-full w-fit mb-4">
+                                <!-- icon needed -->
+
+                                <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true"
+                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
+                                    viewBox="0 0 24 24">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                        stroke-width="2" d="m8 8-4 4 4 4m8 0 4-4-4-4m-2-3-4 14" />
+                                </svg>
+
+
+                            </div>
+                            <h3 class="text-xl font-semibold mb-2">Development</h3>
+                            <p class="text-slate-600">
+                                Creating responsive web applications with modern
+                                technologies.
+                            </p>
+                        </div>
+                        <div class="bg-blue-50 p-6 rounded-lg shadow-sm">
+                            <div
+                                class="bg-blue-100 hover:bg-blue-500 transition-colors duration-300 p-3 rounded-full w-fit mb-4">
+                                <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true"
+                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
+                                    viewBox="0 0 24 24">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="M12 6.03v13m0-13c-2.819-.831-4.715-1.076-8.029-1.023A.99.99 0 0 0 3 6v11c0 .563.466 1.014 1.03 1.007 3.122-.043 5.018.212 7.97 1.023m0-13c2.819-.831 4.715-1.076 8.029-1.023A.99.99 0 0 1 21 6v11c0 .563-.466 1.014-1.03 1.007-3.122-.043-5.018.212-7.97 1.023" />
+                                </svg>
+
+                            </div>
+                            <h3 class="text-xl font-semibold mb-2">
+                                Continuous Learning
+                            </h3>
+                            <p class="text-slate-600">
+                                Always expanding my knowledge and staying updated with industry
+                                trends.
+                            </p>
+                        </div>
+                        <div class="bg-blue-50 p-6 rounded-lg shadow-sm">
+                            <div
+                                class="bg-blue-100 hover:bg-blue-500 transition-colors duration-300 p-3 rounded-full w-fit mb-4">
+
+                                <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true"
+                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
+                                    viewBox="0 0 24 24">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="M8 7H5a2 2 0 0 0-2 2v4m5-6h8M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2m0 0h3a2 2 0 0 1 2 2v4m0 0v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-6m18 0s-4 2-9 2-9-2-9-2m9-2h.01" />
+                                </svg>
+
+                            </div>
+                            <h3 class="text-xl font-semibold mb-2">Professional</h3>
+                            <p class="text-slate-600">
+                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque magnam debitis, nisi
+                                voluptatum voluptatem natus cumque ex quia maxime, itaque sunt ipsam. Sit voluptatibus
+                                enim quas tempore neque consequatur quae.
+                            </p>
+                        </div>
+                        <div class="bg-blue-50 p-6 rounded-lg shadow-sm">
+                            <div
+                                class="bg-blue-100 hover:bg-blue-500 transition-colors duration-300 p-3 rounded-full w-fit mb-4">
+                                <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true"
+                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
+                                    viewBox="0 0 24 24">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="M14.6144 7.19994c.3479.48981.5999 1.15357.5999 1.80006 0 1.6569-1.3432 3-3 3-1.6569 0-3.00004-1.3431-3.00004-3 0-.67539.22319-1.29865.59983-1.80006M6.21426 6v4m0-4 6.00004-3 6 3-6 2-2.40021-.80006M6.21426 6l3.59983 1.19994M6.21426 19.8013v-2.1525c0-1.6825 1.27251-3.3075 2.95093-3.6488l3.04911 2.9345 3-2.9441c1.7026.3193 3 1.9596 3 3.6584v2.1525c0 .6312-.5373 1.1429-1.2 1.1429H7.41426c-.66274 0-1.2-.5117-1.2-1.1429Z" />
+                                </svg>
+
+                            </div>
+                            <h3 class="text-xl font-semibold mb-2">Education</h3>
+                            <p class="text-slate-600">
+                                Bachelor in Information management background with specialization in information
+                                technologies.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills -->
+        <section id="my-skills" class="py-20 bg-slate-50 w-full">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4">My Skills</h2>
+                    <div class="w-20 h-1 bg-blue-600 mx-auto"></div>
+                    <p class="mt-4 text-lg text-slate-600 max-w-2xl mx-auto">
+                        I've worked with a range of technologies in the web development
+                        world
+                    </p>
+                </div>
+                <div class="py-12 flex items-center justify-center ">
+                    <div class=" grid grid-cols-2 md:grid-cols-4 gap-[100px]">
+                        <div class="cursor-pointer">
+                            <img src="/assets/icons/html.svg" alt="html"
+                                class="hover:scale-120 transition-all delay-250">
+                            <p class="py-3 text-lg font-medium text-center pr-3 ">HTML</p>
+                        </div>
+                        <div class="cursor-pointer">
+                            <img src="/assets/icons/css.svg" alt="CSS" class="hover:scale-120 transition-all delay-250">
+                            <p class="py-3 text-lg font-medium text-center pr-3">CSS</p>
+                        </div>
+
+                        <div class="cursor-pointer">
+                            <img src="/assets/icons/javascript.svg" alt="js"
+                                class="hover:scale-120 transition-all delay-250">
+                            <p class="py-3 text-lg font-medium text-center">JavaScript</p>
+                        </div>
+
+                        <div class="cursor-pointer">
+                            <img src="/assets/icons/react.svg" alt="react"
+                                class="hover:scale-120 transition-all delay-250">
+                            <p class="py-3 text-lg font-medium text-center ">React</p>
+                        </div>
+
+                        <div class="cursor-pointer">
+                            <img src="/assets/icons/figma.svg" alt="figma"
+                                class="hover:scale-120 transition-all delay-250">
+                            <p class="py-3 text-lg font-medium px-3 ">figma</p>
+                        </div>
+                        <div class="cursor-pointer">
+                            <img src="/assets/icons/typescript.png" alt="typescript"
+                                class="hover:scale-120 transition-all delay-250">
+                            <p class="py-3 text-lg font-medium px-3 ">typescript</p>
+                        </div>
+                        <div class="cursor-pointer">
+                            <img src="/assets/icons/twig.png" alt="twig"
+                                class="w-25 h-25 hover:scale-120 transition-all delay-250">
+                            <p class="py-3 text-lg font-medium px-3 ">twig</p>
+                        </div>
+                        <div class="cursor-pointer">
+                            <img src="/assets/icons/python.png" alt="python"
+                                class="w-25 h-25 hover:scale-120 transition-all delay-250">
+                            <p class="py-3 text-lg font-medium px-3 ">python</p>
+                        </div>
+                        <div class="cursor-pointer">
+                            <img src="/assets/icons/django.png" alt="django"
+                                class="w-30 h-15 hover:scale-120 transition-all delay-250">
+                            <p class="py-3 text-lg font-medium px-3 ">django</p>
+                        </div>
+                        <div class="cursor-pointer">
+                            <img src="/assets/icons/nextjs.png" alt="nextjs"
+                                class="w-30 h-20 hover:scale-120 transition-all delay-250">
+                            <p class="py-3 text-lg font-medium px-3 ">nextjs</p>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </section>
+
+        <!-- contact me -->
+        <section class="py-20 bg-white w-full">
+            <div class="container mx-auto px-4 ">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4">Get In Touch</h2>
+                    <div class="w-20 h-1 bg-blue-600 mx-auto"></div>
+                    <p class="mt-4 text-lg text-slate-600 max-w-2xl mx-auto">
+                        Have a question or want to work together? Feel free to contact me!
+                    </p>
+                </div>
+                <!--  -->
+                <div class="flex justify-center    ">
+                    <div class="bg-blue-50/80 px-10 py-12 rounded-lg shadow-lg transition-all duration-300 hover:scale-115">
+                        <h3 class="text-2xl font-bold mb-6 text-slate-800 mr-10">
+                            Contact Information
+                        </h3>
+                        <div class="space-y-6">
+                            <div class="flex items-center ">
+                                <div
+                                    class="bg-blue-100 p-3 rounded-full mr-4 hover:bg-blue-500 transition-color duration-300">
+                                    <!-- Icon need to add -->
+                                    <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true"
+                                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
+                                        viewBox="0 0 24 24">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                            stroke-width="2"
+                                            d="M11 16v-5.5A3.5 3.5 0 0 0 7.5 7m3.5 9H4v-5.5A3.5 3.5 0 0 1 7.5 7m3.5 9v4M7.5 7H14m0 0V4h2.5M14 7v3m-3.5 6H20v-6a3 3 0 0 0-3-3m-2 9v4m-8-6.5h1" />
+                                    </svg>
+
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-slate-800">Email</h4>
+                                    <p class="text-slate-600">bibekdevkota2059@gmail.com</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center">
+                                <div
+                                    class="bg-blue-100 p-3 rounded-full hover:bg-blue-500 transition-color duration-300 mr-4">
+                                    <!-- icon need to add -->
+                                    <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true"
+                                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path
+                                            d="M7.978 4a2.553 2.553 0 0 0-1.926.877C4.233 6.7 3.699 8.751 4.153 10.814c.44 1.995 1.778 3.893 3.456 5.572 1.68 1.679 3.577 3.018 5.57 3.459 2.062.456 4.115-.073 5.94-1.885a2.556 2.556 0 0 0 .001-3.861l-1.21-1.21a2.689 2.689 0 0 0-3.802 0l-.617.618a.806.806 0 0 1-1.14 0l-1.854-1.855a.807.807 0 0 1 0-1.14l.618-.62a2.692 2.692 0 0 0 0-3.803l-1.21-1.211A2.555 2.555 0 0 0 7.978 4Z" />
+                                    </svg>
+
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-slate-800">Phone</h4>
+                                    <p class="text-slate-600">+977 9867378960</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="bg-blue-100 p-3 rounded-full mr-4 hover:bg-blue-500 transition-color duration-300 text-blue-100 hover:text-blue-500">
+                                    <!-- Icon need to add -->
+                                    <svg class="w-6 h-6" width="24" height="24" viewBox="0 0 81 92" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M47.1899 74.1999C43.9899 80.1599 35.54 80.41 31.98 74.66L13.41 44.6299C1.60003 25.5399 14.89 0.809926 37.33 0.129926C59.77 -0.550074 74.54 23.3199 63.91 43.0899L47.1899 74.1899V74.1999Z"
+                                            fill="white" />
+                                        <path
+                                            d="M40.29 89.9899C61.4425 89.9899 78.59 84.9888 78.59 78.8198C78.59 72.6508 61.4425 67.6499 40.29 67.6499C19.1375 67.6499 1.98999 72.6508 1.98999 78.8198C1.98999 84.9888 19.1375 89.9899 40.29 89.9899Z"
+                                            stroke="white" stroke-width="3.02" stroke-miterlimit="10" />
+                                        <path
+                                            d="M38.21 34.97C42.0649 34.97 45.1899 31.8449 45.1899 27.99C45.1899 24.135 42.0649 21.01 38.21 21.01C34.355 21.01 31.23 24.135 31.23 27.99C31.23 31.8449 34.355 34.97 38.21 34.97Z"
+                                             stroke="currentColor" stroke-width="15.18" stroke-miterlimit="10" />
+                                    </svg>
+
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-slate-800">Location</h4>
+                                    <p class="text-slate-600">Bhairahawa, Nepal</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- follow me section need to add -->
+
+
+                </div>
+            </div>
+            </div>
+
+        </section>
+    </main>
+    <!-- footer -->
+
+
+
+
+</body>
+
+</html>
